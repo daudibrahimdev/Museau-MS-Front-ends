@@ -18,12 +18,21 @@ document.querySelector('#search-button').onclick = (e) => {
   e.preventDefault(); // biar gak scroll ke# pas klik
 }
 
+//toggle class active untuk shopping cart
+const shoppingCart = document.querySelector('.shopping-cart');
+
+document.querySelector('#shopping-cart-button').onclick = (e) => {
+  shoppingCart.classList.toggle('active');
+  e.preventDefault();
+}
+
 
 // fungsi untuk hilangin sidebar tanpa harus klik hamburger (klik selain hambur = closed sidebar)
 // dan untuk elemen lainnya ditampung disini
 
 const hamburger = document.querySelector('#hamburger-menu');
 const searchButton = document.querySelector('#search-button');
+const SCB = document.querySelector('#shopping-cart-button');
  
 document.addEventListener('click', function(e){
   if(!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
@@ -32,6 +41,10 @@ document.addEventListener('click', function(e){
 
   if(!searchButton.contains(e.target) && !searchForm.contains(e.target)) {
     searchForm.classList.remove('active');
+  }
+
+  if(!SCB.contains(e.target) && !shoppingCart.contains(e.target)) {
+    shoppingCart.classList.remove('active');
   }
 
 })
