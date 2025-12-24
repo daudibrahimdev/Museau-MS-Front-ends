@@ -182,15 +182,19 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url('../img/dark.jpg');
+  background-image: url('../img/thethinker.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
 
+  /* Bikin masking biar anjay */
+  -webkit-mask-image: linear-gradient(rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+  mask-image: linear-gradient(rgba(0,0,0,1)90%, rgba(0,0,0,0));
+
 }
 
-.hero::after {
+/* .hero::after {
   content:''; 
   display: block;
   position: absolute;
@@ -198,11 +202,25 @@ body {
   height: 30%;
   bottom: 0;
   background: linear-gradient(0deg, rgba(1,1,3,1)8%, rgba(255,255,255,0)50%);
+} */
+ 
+.hero .mask-container {
+  position: absolute;
+  /* background: salmon; */
+  inset: 0;
+  -webkit-mask-image: url('../img/thethinker.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  -webkit-mask-position: center;
 }
 
 .hero .content {
   padding: 1.4rem 7%;
-  max-width: 60rem;
+  /* max-width: 60rem; */
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 100px;
 }
 
 .hero .content h1{
